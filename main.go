@@ -49,6 +49,10 @@ func newHandler(client *http.Client, url string) http.Handler {
 		io.WriteString(w, strings.Join(lines, "\n"))
 	})
 
+	mux.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(204)
+	})
+
 	return mux
 }
 
