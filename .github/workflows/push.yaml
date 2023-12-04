@@ -1,6 +1,8 @@
 name: Release
 on: [push]
 
+permissions: write-all
+
 jobs:
   release:
     name: Release
